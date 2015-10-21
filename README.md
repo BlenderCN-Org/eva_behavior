@@ -1,9 +1,29 @@
 # eva_behavior
 
-Initial behaviour tree for Eva. Current verion works with the
+Behaviour tree prototype for Eva. This version works with the
 [Eva blender head](http://github.com/hansonrobotics/blender_api)
 and should also continue to work with the older, less sophisticated
 [Arthur robot](http://github.com/hansonrobotics/robo_blender) head.
+
+## Deprecated
+
+This implementation is deprecated; it will be replaced by a version
+that runs in OpenCog, and integrates chat and emotion modelling.
+The new system is being developed in the [OpenCog ROS behavior
+scripting](https://github.com/opencog/ros-behavior-scripting) repo.
+
+The technical reason for this is that it is impossible to dynamically
+script python at run-time.  That is, we want to be able to dynamically
+learn new behaviors and then run them on the fly; in python, this would
+be very difficult, as not only would new python code need to be
+automatically generated, but it would need to then be spliced into
+currently running code, at arbitrary points in the tree.  That is,
+the behavior tree needs to be treated as a data structure, and not
+as a collection of functions and subroutine calls.
+
+In the meanwhile, this code does work... although it is NOT integrated
+with chat; nor does it have any Psi-theory emotional modelling or
+control.
 
 ## Pre-requisites
 
